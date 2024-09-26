@@ -39,7 +39,7 @@ def gen(fsa):
       list_of_letters = list(fsa[current_state].keys())
 
 def main():
-  #gen(fsa1)
+  gen(fsa1)
   gen(fsa2)
 
 if __name__ == "__main__":

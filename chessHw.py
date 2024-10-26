@@ -35,8 +35,8 @@ def computerWhite(board):
     board.push(first_move)
     print(board.fen())
     print(board)
-    if board.is_checkmate():
-      print("Checkmate!")
+    # if board.is_checkmate():
+    #   print("Checkmate!")
     if board.outcome() is not None:
       break
 
@@ -57,7 +57,7 @@ def computerWhite(board):
   # computerChooseMove(board.fen(), board)
 
 def computerBlack(board):
-  while (board.outcome()) is not None:
+  while (board.outcome()) is None:
 
     #white makes first move
     white_first_move = chess.Move.from_uci(input('White: '))
@@ -66,8 +66,8 @@ def computerBlack(board):
     board.push(white_first_move)
     print("New FEN Position: " + board.fen())
     print(board)
-    if board.is_checkmate():
-      print("Checkmate!")
+    # if board.is_checkmate():
+    #   print("Checkmate!")
     if board.outcome():
       break
 
@@ -91,8 +91,8 @@ def botsPlay(board):
     board.push(first_move)
     print(board.fen())
     print(board)
-    if board.is_checkmate():
-      print("Checkmate!")
+    # if board.is_checkmate():
+    #   print("Checkmate!")
     if board.outcome():
       break
 
@@ -129,6 +129,8 @@ def main():
   elif computer_player == 'bots':
     botsPlay(board)
 
+  if board.is_checkmate():
+    print("Checkmate!")
   if board.is_stalemate():
     print("It's a tie!")
   elif board.is_insufficient_material():
